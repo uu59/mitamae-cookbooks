@@ -3,6 +3,7 @@ include_recipe "../core/default.rb"
 node.reverse_merge!({
   "nodebrew" => {
     "root" => "/opt/nodebrew",
+    "version" => "v7",
   }
 })
 
@@ -26,7 +27,7 @@ define :setup_specific_node_binary do
   SH
 end
 
-setup_specific_node_binary "v7"
+setup_specific_node_binary node[:nodebrew][:version]
 
 run_command <<-SH
   chown -R #{node[:core][:owner]}:#{node[:core][:group]} #{root}
