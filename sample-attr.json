@@ -1,0 +1,9 @@
+{
+  "core": {
+    "owner": "uu59",
+    "group": "uu59"
+  },
+  "nodebrew": {
+    "root": "/opt/nodebrew"
+  }
+}
