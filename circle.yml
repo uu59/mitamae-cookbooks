@@ -5,3 +5,4 @@ machine:
 test:
   override:
     - ./test/test_core.bash
+    - ./test/test_digdag_ui.bash
