@@ -39,6 +39,6 @@ rollback-pwd() {
 run-mitamae() {
   local target="$1"
   for tag in $(test-images); do
-    docker run -v $(repodir):/mitamae/repo "$tag" ./mitamae local repo/$target
+    docker run -v $(repodir):/mitamae/repo "$tag" ./mitamae local -l debug repo/$target
   done
 }
