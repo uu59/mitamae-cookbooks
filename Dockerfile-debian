@@ -1,0 +1,16 @@
+FROM debian:stable-slim
+
+
+RUN mkdir -p /mitamae/repo
+WORKDIR /mitamae
+ENV DEBIAN_FRONTEND noninteractive
+VOLUME /var/cache/apt/archives
+VOLUME /var/lib/apt/
+
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends ca-certificates curl sudo apt-transport-https
+
+RUN curl -fL -o mitamae https://github.com/k0kubun/mitamae/releases/download/v1.4.0/mitamae-x86_64-linux \
+  && chmod +x mitamae
+
+
