@@ -1,0 +1,14 @@
+{
+  "core": {
+    "owner": "uu59",
+    "group": "uu59grp"
+  },
+  "nodebrew": {
+    "root": "/opt/nodebrew-test",
+    "version": "v6"
+  },
+  "digdag-ui": {
+    "root": "/opt/digdag-ui-test",
+    "revision": "v0.9.3"
+  }
+}
