@@ -12,3 +12,5 @@ run_command <<-SH
   groupadd #{group}
   id #{user} || useradd -m -g #{group} #{user}
 SH
+
+include_recipe "./verify.rb"
