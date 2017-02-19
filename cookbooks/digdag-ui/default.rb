@@ -16,8 +16,6 @@ rev_dir = "#{root}/#{rev}"
 directory root
 
 run_command <<-SH
-  set -e
-
   [ -d "#{repo}" ] || git clone -q https://github.com/treasure-data/digdag #{repo}
 SH
 
