@@ -25,10 +25,10 @@ run_command <<-SH
   set -e
 
   cd "#{repo}"
-  if ! git rev-list "#{rev}"; then
+  if ! git rev-list --quiet "#{rev}"; then
     git fetch --all --prune --tags
   fi
-  rev="$(git rev-list #{rev} | head -n1)"
+  rev="$(git rev-list --max-count=1 #{rev})"
   git checkout -f $rev
 SH
 
