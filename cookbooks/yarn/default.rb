@@ -13,3 +13,7 @@ when "debian", "ubuntu"
 else
   raise "Not supported platform (recognized platform: #{node[:platform]})"
 end
+
+verify <<-SH
+  which yarn
+SH

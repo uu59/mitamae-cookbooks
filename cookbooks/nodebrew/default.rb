@@ -32,3 +32,10 @@ setup_specific_node_binary node[:nodebrew][:version]
 run_command <<-SH
   chown -R #{node[:core][:owner]}:#{node[:core][:group]} #{root}
 SH
+
+
+verify <<-SH
+  which nodebrew
+  stat -c "%U:%G" "#{root}"
+  node -v | grep -F "#{node[:nodebrew][:version]}"
+SH
